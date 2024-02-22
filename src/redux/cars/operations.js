@@ -1,17 +1,19 @@
-// import axios from 'axios';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// export const fetchContacts = createAsyncThunk(
-//   'contacts/fetchAllContacts',
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const contacts = await axios.get('/contacts');
-//       return contacts.data;
-//     } catch (e) {
-//       return rejectWithValue(e.message);
-//     }
-//   }
-// );
+const BASE_URL = 'https://6548e161dd8ebcd4ab23cbd9.mockapi.io/api/v1/cars';
+
+export const fetchCars = createAsyncThunk(
+  'cars/fetchAllCars',
+  async (_, { rejectWithValue }) => {
+    try {
+      const cars = await axios.get(`${BASE_URL}`);
+      return cars.data;
+    } catch (e) {
+      return rejectWithValue(e.message);
+    }
+  }
+);
 
 // export const addContact = createAsyncThunk(
 //   'contacts/addContact',
