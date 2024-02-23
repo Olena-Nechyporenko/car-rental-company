@@ -34,6 +34,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Img = styled.img`
+  object-fit: cover;
   width: 274px;
   height: 268px;
 `;

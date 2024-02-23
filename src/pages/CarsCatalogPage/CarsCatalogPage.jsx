@@ -15,7 +15,7 @@ export default function CarsCatalogPage() {
 
   useEffect(() => {
     dispatch(fetchCars(currentPage));
-  }, [currentPage]);
+  }, [currentPage, dispatch]);
 
   const handleLoadMore = () => {
     setCurrentPage(prevPage => prevPage + 1);
