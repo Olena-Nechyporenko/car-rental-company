@@ -1,11 +1,16 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = 'https://6548e161dd8ebcd4ab23cbd9.mockapi.io/api/v1/cars';
+const BASE_URL = new URL(
+  'https://6548e161dd8ebcd4ab23cbd9.mockapi.io/api/v1/cars'
+);
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchAllCars',
   async (_, { rejectWithValue }) => {
+    // const pages = page;
+    // BASE_URL.searchParams.append('page', pages);
+    // BASE_URL.searchParams.append('limit', 12);
     try {
       const cars = await axios.get(`${BASE_URL}`);
       return cars.data;
@@ -15,25 +20,15 @@ export const fetchCars = createAsyncThunk(
   }
 );
 
-// export const addContact = createAsyncThunk(
-//   'contacts/addContact',
-//   async (contactData, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.post('/contacts', contactData);
-//       return response.data;
-//     } catch (e) {
-//       return rejectWithValue(e.message);
-//     }
-//   }
-// );
-// export const deleteContact = createAsyncThunk(
-//   'contacts/deleteContact',
-//   async (contactId, { rejectWithValue }) => {
-//     try {
-//       const response = await axios.delete(`/contacts/${contactId}`);
-//       return response.data;
-//     } catch (e) {
-//       return rejectWithValue(e.message);
-//     }
-//   }
-// );
+export const fetchCarById = createAsyncThunk(
+  'cars/fetchCar',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/${id}`);
+      console.log(response);
+      return response.data;
+    } catch (e) {
+      return rejectWithValue(e.message);
+    }
+  }
+);

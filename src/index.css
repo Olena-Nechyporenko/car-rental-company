@@ -9,7 +9,7 @@
   --white-text-color: #fff;
   --input-color: #f7f7fb;
 
-  --main-transition: all 250ms linear;
+  --main-transition: 250ms linear;
 }
 
 body {

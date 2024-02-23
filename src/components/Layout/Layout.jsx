@@ -1,10 +1,11 @@
 import { Suspense } from 'react';
-import { Header, Nav, Container, Link } from './Layout.styled';
+import { Header, LogoLink, Nav, Container, Link } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 export const Layout = () => {
   return (
     <>
       <Header>
+        <LogoLink to="/">Car rental company</LogoLink>
         <Nav>
           <Link to="/">Home</Link>
           <Link to="/catalog">Cars</Link>

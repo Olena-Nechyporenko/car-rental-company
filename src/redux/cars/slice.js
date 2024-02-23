@@ -13,40 +13,27 @@ const carsSlice = createSlice({
   initialState: {
     cars: {
       items: [],
-      favorites: [],
       isLoading: false,
       error: null,
     },
+    id: '',
     filter: '',
   },
 
   reducers: {
-    addFavorites(state, action) {
-      const carById = state.cars.items.find(car =>
-        car.id.toString().includes(action.payload)
-      );
-      // const isInFavorites = state.cars.favorites.includes(carById);
-      // console.log(isInFavorites);
-
-      state.cars.favorites.push(carById);
+    setId(state, action) {
+      state.id = action.payload;
     },
-    deleteFavorites(state, action) {
-      const updateFavorites = state.cars.favorites.filter(
-        car => car.id.toString() !== action.payload
-      );
-      state.cars.favorites = updateFavorites;
+    setFilter(state, action) {
+      state.filter = action.payload;
     },
   },
   extraReducers: {
     // pending
     [fetchCars.pending]: handlePending,
-    // [addContact.pending]: handlePending,
-    // [deleteContact.pending]: handlePending,
 
     // rejected
     [fetchCars.rejected]: handleRejected,
-    // [addContact.rejected]: handleRejected,
-    // [deleteContact.rejected]: handleRejected,
 
     // fulfilled
     [fetchCars.fulfilled](state, action) {
@@ -54,21 +41,9 @@ const carsSlice = createSlice({
       state.cars.error = null;
       state.cars.items = action.payload;
     },
-    // [addContact.fulfilled](state, action) {
-    //   state.contacts.isLoading = false;
-    //   state.contacts.error = null;
-    //   state.contacts.items = [...state.contacts.items, action.payload];
-    // },
-    // [deleteContact.fulfilled](state, action) {
-    //   state.contacts.isLoading = false;
-    //   state.contacts.error = null;
-    //   state.contacts.items = state.contacts.items.filter(
-    //     ({ id }) => id !== action.payload.id
-    //   );
-    // },
   },
 });
 
-export const { addFavorites, deleteFavorites } = carsSlice.actions;
+export const { setId, setFilter } = carsSlice.actions;
 
 export const carsReducer = carsSlice.reducer;
