@@ -17,7 +17,12 @@ const carsSlice = createSlice({
       error: null,
     },
     id: '',
-    filter: '',
+    filter: {
+      brand: null,
+      price: null,
+      from: null,
+      to: null,
+    },
   },
 
   reducers: {
@@ -25,17 +30,15 @@ const carsSlice = createSlice({
       state.id = action.payload;
     },
     setFilter(state, action) {
-      state.filter = action.payload;
+      state.filter.brand = action.payload.brand.value;
+      state.filter.price = action.payload.price.value;
+      state.filter.from = action.payload.from;
+      state.filter.to = action.payload.to;
     },
   },
   extraReducers: {
-    // pending
     [fetchCars.pending]: handlePending,
-
-    // rejected
     [fetchCars.rejected]: handleRejected,
-
-    // fulfilled
     [fetchCars.fulfilled](state, action) {
       state.cars.isLoading = false;
       state.cars.error = null;

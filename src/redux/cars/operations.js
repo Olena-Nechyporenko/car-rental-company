@@ -8,8 +8,8 @@ const BASE_URL = new URL(
 export const fetchCars = createAsyncThunk(
   'cars/fetchAllCars',
   async (_, { rejectWithValue }) => {
-    // const pages = page;
-    // BASE_URL.searchParams.append('page', pages);
+    // const currentPage = data.currentPage;
+    // BASE_URL.searchParams.append('page', currentPage);
     // BASE_URL.searchParams.append('limit', 12);
     try {
       const cars = await axios.get(`${BASE_URL}`);

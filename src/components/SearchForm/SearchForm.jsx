@@ -5,10 +5,13 @@ import {
   DropDownBrand,
   DropDownPrice,
   SearchButton,
+  InputFrom,
+  InputTo,
+  InputWrapp,
 } from './SearchForm.styled';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCars } from 'redux/cars/selectors';
+import { useDispatch } from 'react-redux';
+// import { selectCars } from 'redux/cars/selectors';
 import { setFilter } from 'redux/cars/slice';
 
 const carMakes = [
@@ -23,35 +26,39 @@ const carMakes = [
   'Hyundai',
   'MINI',
   'Bentley',
-  'Mercedes-Benz',
+  'Mercedes',
   'Aston Martin',
   'Pontiac',
   'Lamborghini',
   'Audi',
   'BMW',
   'Chevrolet',
-  'Mercedes-Benz',
   'Chrysler',
   'Kia',
   'Land',
 ];
 
+let prices = [];
+for (let i = 30; i <= 300; i += 10) {
+  prices.push(i);
+}
+
 export const SearchForm = () => {
   const [brand, setBrand] = useState(null);
   const [price, setPrice] = useState(null);
-
+  const [from, setFrom] = useState(null);
+  const [to, setTo] = useState(null);
   const dispatch = useDispatch();
-  const cars = useSelector(selectCars);
 
   const brandOptions = carMakes.map(make => {
     return { value: make, label: make };
   });
-  const priceOptions = cars.map(({ rentalPrice }) => {
-    return { value: rentalPrice, label: rentalPrice };
+  const priceOptions = prices.map(price => {
+    return { value: price, label: price };
   });
 
   const handleSubmit = () => {
-    dispatch(setFilter(brand.value));
+    dispatch(setFilter({ brand, price, from, to }));
   };
 
   return (
@@ -83,6 +90,21 @@ export const SearchForm = () => {
               placeholder="To $"
             />
           </Label>
+          <InputWrapp>
+            Сar mileage / km
+            <InputFrom
+              type="text"
+              name="from"
+              placeholder="From"
+              onChange={e => setFrom(e.target.value)}
+            />
+            <InputTo
+              type="text"
+              name="to"
+              placeholder="To"
+              onChange={e => setTo(e.target.value)}
+            />
+          </InputWrapp>
           <SearchButton type="submit">Search</SearchButton>
         </FormWrapper>
       </Form>
