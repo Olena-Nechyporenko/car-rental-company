@@ -42,7 +42,6 @@ const carsSlice = createSlice({
     [fetchCars.fulfilled](state, action) {
       state.cars.isLoading = false;
       state.cars.error = null;
-      console.log(action.payload);
       state.cars.items = action.payload;
     },
     [fetchNextPage.pending]: handlePending,
