@@ -21,7 +21,7 @@ export const LoadMoreBtn = styled.button`
   text-decoration: underline;
   text-decoration-skip-ink: none;
   background-color: transparent;
-  color: #3470ff;
+  color: var(--accent-color);
   border: none;
   margin: 0 auto;
   cursor: pointer;

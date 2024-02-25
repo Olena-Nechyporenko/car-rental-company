@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ModalDetails } from 'components/ModalDetails/ModalDetails';
+import { CarsItem } from 'components/CarsItem/CarsItem';
 import { setId } from 'redux/cars/slice';
 import { List } from './CarsList.styled';
-import { useState } from 'react';
 import {
   selectBrand,
   selectCarById,
@@ -10,8 +12,6 @@ import {
   selectPrice,
   selectTo,
 } from 'redux/cars/selectors';
-import { ModalDetails } from 'components/ModalDetails/ModalDetails';
-import { CarsItem } from 'components/CarsItem/CarsItem';
 
 export const CarsList = () => {
   const [modalOpen, setModalOpen] = useState(false);

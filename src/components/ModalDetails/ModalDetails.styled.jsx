@@ -19,7 +19,6 @@ export const Modal = styled.div`
   z-index: 20px;
   border-radius: 24px;
   width: 541px;
-  // height: 752px;
   background-color: var(--white-text-color);
 `;
 
@@ -29,11 +28,11 @@ export const ModalContainer = styled.div`
 `;
 
 export const CloseIcon = styled(IoClose)`
-  font-size: 24px;
-  color: var(--main-text-color);
   position: absolute;
   top: 16px;
   right: 16px;
+  font-size: 24px;
+  color: var(--main-text-color);
   cursor: pointer;
 
   transition: all var(--main-transition);
@@ -84,7 +83,7 @@ export const BrandTitle = styled.h2`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.3;
-  color: #121417;
+  color: var(--main-text-color);
 `;
 
 export const SpanModel = styled.span`
@@ -95,15 +94,13 @@ export const SpanModel = styled.span`
 `;
 
 export const Info = styled.div`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
-
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 28px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--secondary-text-color);
   width: 277px;
   height: 40px;
   overflow: hidden;
@@ -127,15 +124,13 @@ export const AccessoriesTitle = styled.h2`
 `;
 
 export const Accessories = styled.div`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
-
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 28px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--secondary-text-color);
   height: 40px;
   overflow: hidden;
   margin-bottom: 24px;
@@ -171,7 +166,7 @@ export const Items = styled.li`
 
 export const ItemsSpan = styled.span`
   font-weight: 600;
-  color: #3470ff;
+  color: var(--accent-color);
 `;
 
 export const Button = styled.a`

@@ -2,17 +2,6 @@ import styled from 'styled-components';
 import { IoHeartOutline } from 'react-icons/io5';
 import { IoHeartSharp } from 'react-icons/io5';
 
-export const EmptyHeart = styled(IoHeartOutline)`
-  width: 20px;
-  height: 20px;
-  // color: rgba(255, 255, 255, 0.8);
-`;
-export const FullHeart = styled(IoHeartSharp)`
-  width: 20px;
-  height: 20px;
-  color: var(--accent-color);
-`;
-
 export const Item = styled.li`
   width: 274px;
   height: 426px;
@@ -45,6 +34,17 @@ export const IconFavoriteBtn = styled.button`
   cursor: pointer;
 `;
 
+export const EmptyHeart = styled(IoHeartOutline)`
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+`;
+export const FullHeart = styled(IoHeartSharp)`
+  width: 20px;
+  height: 20px;
+  color: var(--accent-color);
+`;
+
 export const DescrWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@ export const BrandTitle = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #121417;
+  color: var(--main-text-color);
 `;
 
 export const SpanModel = styled.span`
@@ -64,31 +64,25 @@ export const SpanModel = styled.span`
   line-height: 1.5;
   color: var(--accent-color);
 `;
+
 export const Price = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #121417;
+  color: var(--main-text-color);
 `;
 
 export const CarInfo = styled.div`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
-
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-bottom: 28px;
   height: 40px;
-  overflow: hidden;
-`;
-export const City = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--secondary-text-color);
+  margin-bottom: 28px;
+  overflow: hidden;
 `;
 
 export const Button = styled.button`

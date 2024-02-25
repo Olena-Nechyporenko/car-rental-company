@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
-import { Header, LogoLink, Nav, Container, Link } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
+import { Header, LogoLink, Nav, Container, Link } from './Layout.styled';
+
 export const Layout = () => {
   return (
     <>

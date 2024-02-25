@@ -1,8 +1,8 @@
-import { CarsList } from 'components/CarsList/CarsList';
-import { Wrapper, LoadMoreBtn } from './CarsCatalogPage.styled';
-import { SearchForm } from 'components/SearchForm/SearchForm';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CarsList } from 'components/CarsList/CarsList';
+import { SearchForm } from 'components/SearchForm/SearchForm';
+import { Wrapper, LoadMoreBtn } from './CarsCatalogPage.styled';
 import { fetchCars, fetchNextPage } from 'redux/cars/operations';
 import { selectCars } from 'redux/cars/selectors';
 

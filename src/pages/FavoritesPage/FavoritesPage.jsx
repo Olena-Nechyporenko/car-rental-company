@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { CarsItem } from 'components/CarsItem/CarsItem';
+import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ModalDetails } from 'components/ModalDetails/ModalDetails';
 import { Wrapper, Title, List } from './FavoritesPage.styled';
-import { useState } from 'react';
 import { setId } from 'redux/cars/slice';
 import { selectFavorite } from 'redux/favorites/selectors';
 import {
@@ -11,8 +13,6 @@ import {
   selectPrice,
   selectTo,
 } from 'redux/cars/selectors';
-import { CarsItem } from 'components/CarsItem/CarsItem';
-import { SearchForm } from 'components/SearchForm/SearchForm';
 
 export default function FavoritesPage() {
   const [modalOpen, setModalOpen] = useState(false);

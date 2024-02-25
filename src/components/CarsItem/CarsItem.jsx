@@ -1,4 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { selectCars } from 'redux/cars/selectors';
+import { selectFavorite } from 'redux/favorites/selectors';
+import { addFavorites, deleteFavorites } from 'redux/favorites/slice';
 import {
   Item,
   ImgWrapper,
@@ -13,9 +16,6 @@ import {
   CarInfo,
   Button,
 } from './CarsItem.styled';
-import { selectCars } from 'redux/cars/selectors';
-import { selectFavorite } from 'redux/favorites/selectors';
-import { addFavorites, deleteFavorites } from 'redux/favorites/slice';
 
 export const CarsItem = ({ carInfo, modalOpen }) => {
   const {

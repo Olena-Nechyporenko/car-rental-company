@@ -10,13 +10,13 @@ export const FormWrapper = styled.div`
 `;
 
 export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.3;
   color: #8a8a89;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 `;
 
 export const InputBrand = styled(Field)`
@@ -112,12 +112,12 @@ export const customPriceStyles = {
 
 export const LabelWrapp = styled.label`
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.3;
   color: #8a8a89;
-  flex-direction: column;
-  gap: 8px;
   margin-right: 25px;
 `;
 
@@ -130,13 +130,13 @@ export const InputFrom = styled(Field)`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.1;
-  color: #121417;
+  color: var(--main-text-color);
   border-radius: 14px 0 0 14px;
   border: none;
   border-right: 1px solid rgba(18, 20, 23, 0.5);
   width: 160px;
-  height: 48px;
-  background: #f7f7fb;
+  height: 46px;
+  background: var(--input-color);
   padding-left: 14px;
 
   &::placeholder {
@@ -144,13 +144,13 @@ export const InputFrom = styled(Field)`
     font-weight: 500;
     font-size: 18px;
     line-height: 1.1;
-    color: #121417;
+    color: var(--main-text-color);
   }
 
   &:focus {
     outline: none;
     border: 2px solid black;
-    height: 44px;
+    height: 42px;
     width: 158px;
   }
 `;
@@ -159,12 +159,12 @@ export const InputTo = styled(Field)`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.1;
-  color: #121417;
+  color: var(--main-text-color);
   border-radius: 0 14px 14px 0;
   border: none;
   width: 160px;
-  height: 48px;
-  background: #f7f7fb;
+  height: 46px;
+  background: var(--input-color);
   padding-left: 14px;
 
   &::placeholder {
@@ -172,13 +172,13 @@ export const InputTo = styled(Field)`
     font-weight: 500;
     font-size: 18px;
     line-height: 1.1;
-    color: #121417;
+    color: var(--main-text-color);
   }
 
   &:focus {
     outline: none;
     border: 2px solid black;
-    height: 44px;
+    height: 42px;
     width: 160px;
   }
 `;
@@ -187,13 +187,13 @@ export const SearchButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
-  color: #fff;
+  color: var(--white-text-color);
   border-radius: 12px;
   border: none;
   padding: 14px 44px;
   width: 136px;
   height: 48px;
-  background: #3470ff;
+  background: var(--accent-color);
   cursor: pointer;
   transition: all var(--main-transition);
 

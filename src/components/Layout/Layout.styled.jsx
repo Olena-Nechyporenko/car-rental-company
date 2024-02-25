@@ -45,10 +45,6 @@ export const Link = styled(NavLink)`
   &:hover {
     color: #94b3ff;
   }
-
-  &:active {
-    color: #94b3ff;
-  }
 `;
 
 export const Container = styled.main`

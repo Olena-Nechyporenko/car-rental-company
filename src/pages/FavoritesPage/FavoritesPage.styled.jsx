@@ -8,7 +8,7 @@ export const Title = styled.h2`
   font-weight: 600;
   font-size: 30px;
   line-height: 1.5;
-  color: #121417;
+  color: var(--main-text-color);
   text-align: center;
   margin-bottom: 30px;
 `;

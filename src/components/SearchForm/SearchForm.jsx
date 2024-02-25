@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/cars/slice';
 import {
   FormWrapper,
   Label,
@@ -12,9 +15,6 @@ import {
   customBrandStyles,
   customPriceStyles,
 } from './SearchForm.styled';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/cars/slice';
 
 const carMakes = [
   'Buick',
