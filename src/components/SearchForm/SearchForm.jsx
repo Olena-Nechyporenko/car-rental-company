@@ -8,10 +8,12 @@ import {
   InputFrom,
   InputTo,
   InputWrapp,
+  LabelWrapp,
+  customBrandStyles,
+  customPriceStyles,
 } from './SearchForm.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { selectCars } from 'redux/cars/selectors';
 import { setFilter } from 'redux/cars/slice';
 
 const carMakes = [
@@ -76,6 +78,7 @@ export const SearchForm = () => {
               onChange={setBrand}
               options={brandOptions}
               placeholder="Enter the text"
+              styles={customBrandStyles}
             />
             {/* <span >
               <ErrorMessage name="name" />
@@ -88,23 +91,26 @@ export const SearchForm = () => {
               onChange={setPrice}
               options={priceOptions}
               placeholder="To $"
+              styles={customPriceStyles}
             />
           </Label>
-          <InputWrapp>
+          <LabelWrapp>
             Сar mileage / km
-            <InputFrom
-              type="text"
-              name="from"
-              placeholder="From"
-              onChange={e => setFrom(e.target.value)}
-            />
-            <InputTo
-              type="text"
-              name="to"
-              placeholder="To"
-              onChange={e => setTo(e.target.value)}
-            />
-          </InputWrapp>
+            <InputWrapp>
+              <InputFrom
+                type="text"
+                name="from"
+                placeholder="From"
+                onChange={e => setFrom(e.target.value)}
+              />
+              <InputTo
+                type="text"
+                name="to"
+                placeholder="To"
+                onChange={e => setTo(e.target.value)}
+              />
+            </InputWrapp>
+          </LabelWrapp>
           <SearchButton type="submit">Search</SearchButton>
         </FormWrapper>
       </Form>

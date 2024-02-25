@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Header, LogoLink, Nav, Container, Link } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 export const Layout = () => {
   return (
     <>
@@ -12,7 +13,7 @@ export const Layout = () => {
           <Link to="/favorites">Favorites</Link>
         </Nav>
       </Header>
-      <Suspense fallback={<span>Loading page...</span>}>
+      <Suspense fallback={<Loader />}>
         <Container>
           <Outlet />
         </Container>
