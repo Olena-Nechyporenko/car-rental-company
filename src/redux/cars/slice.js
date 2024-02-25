@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCars } from 'redux/cars/operations';
+import { fetchCars, fetchNextPage } from 'redux/cars/operations';
 
 const handlePending = state => {
   state.cars.isLoading = true;
@@ -42,7 +42,15 @@ const carsSlice = createSlice({
     [fetchCars.fulfilled](state, action) {
       state.cars.isLoading = false;
       state.cars.error = null;
+      console.log(action.payload);
       state.cars.items = action.payload;
+    },
+    [fetchNextPage.pending]: handlePending,
+    [fetchNextPage.rejected]: handleRejected,
+    [fetchNextPage.fulfilled](state, action) {
+      state.cars.isLoading = false;
+      state.cars.error = null;
+      state.cars.items.push(...action.payload);
     },
   },
 });

@@ -66,7 +66,6 @@ export const SearchForm = () => {
   return (
     <Formik
       initialValues={{ brands: brand, prices: price }}
-      // validationSchema={schema}
       onSubmit={handleSubmit}
     >
       <Form autoComplete="off">
@@ -79,10 +78,8 @@ export const SearchForm = () => {
               options={brandOptions}
               placeholder="Enter the text"
               styles={customBrandStyles}
+              required
             />
-            {/* <span >
-              <ErrorMessage name="name" />
-            </span> */}
           </Label>
           <Label htmlFor="prices">
             Price/ 1 hour
@@ -92,19 +89,20 @@ export const SearchForm = () => {
               options={priceOptions}
               placeholder="To $"
               styles={customPriceStyles}
+              required
             />
           </Label>
           <LabelWrapp>
             Сar mileage / km
             <InputWrapp>
               <InputFrom
-                type="text"
+                type="number"
                 name="from"
                 placeholder="From"
                 onChange={e => setFrom(e.target.value)}
               />
               <InputTo
-                type="text"
+                type="number"
                 name="to"
                 placeholder="To"
                 onChange={e => setTo(e.target.value)}

@@ -13,7 +13,6 @@ import {
 } from 'redux/cars/selectors';
 import { CarsItem } from 'components/CarsItem/CarsItem';
 import { SearchForm } from 'components/SearchForm/SearchForm';
-import { Loader } from 'components/Loader/Loader';
 
 export default function FavoritesPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -58,16 +57,11 @@ export default function FavoritesPage() {
     <Wrapper>
       <Title>Favorite cars</Title>
       <SearchForm />
-      {favoriteCars.length === 0 ? (
-        <Loader />
-      ) : (
-        <List>
-          {filtered.map(car => (
-            <CarsItem key={car.id} carInfo={car} modalOpen={handleModalOpen} />
-          ))}
-        </List>
-      )}
-
+      <List>
+        {filtered.map(car => (
+          <CarsItem key={car.id} carInfo={car} modalOpen={handleModalOpen} />
+        ))}
+      </List>
       {modalOpen && (
         <ModalDetails onClose={handleModalClose} carInfo={oneCar} />
       )}

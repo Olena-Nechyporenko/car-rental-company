@@ -52,6 +52,10 @@ export const customBrandStyles = {
     border: 'none',
     width: '224px',
     height: '48px',
+    fontSize: '18px',
+    boxShadow:
+      state.isFocused &&
+      'rgba(0, 0, 0, 0.16) 0px 1px 1px, rgb(51, 51, 51) 0px 0px 0px 2px;',
   }),
   option: (provided, state) => ({
     ...provided,
@@ -61,6 +65,13 @@ export const customBrandStyles = {
     fontSize: '16px',
     lineHeight: '1.2',
     cursor: 'pointer',
+  }),
+  placeholder: (provided, state) => ({
+    ...provided,
+    fontSize: '18px',
+    fontWeight: '500',
+    lineHeight: '1.1',
+    color: '#8a8a89',
   }),
 };
 
@@ -76,6 +87,10 @@ export const customPriceStyles = {
     border: 'none',
     width: '125px',
     height: '48px',
+    fontSize: '18px',
+    boxShadow:
+      state.isFocused &&
+      'rgba(0, 0, 0, 0.16) 0px 1px 1px, rgb(51, 51, 51) 0px 0px 0px 2px;',
   }),
   option: (provided, state) => ({
     ...provided,
@@ -85,6 +100,13 @@ export const customPriceStyles = {
     fontSize: '16px',
     lineHeight: '1.2',
     cursor: 'pointer',
+  }),
+  placeholder: (provided, state) => ({
+    ...provided,
+    fontSize: '18px',
+    fontWeight: '500',
+    lineHeight: '1.1',
+    color: '#8a8a89',
   }),
 };
 
@@ -96,11 +118,12 @@ export const LabelWrapp = styled.label`
   color: #8a8a89;
   flex-direction: column;
   gap: 8px;
-  width: 320px;
+  margin-right: 25px;
 `;
 
 export const InputWrapp = styled.div`
   display: flex;
+  width: 320px;
 `;
 
 export const InputFrom = styled(Field)`
@@ -114,6 +137,22 @@ export const InputFrom = styled(Field)`
   width: 160px;
   height: 48px;
   background: #f7f7fb;
+  padding-left: 14px;
+
+  &::placeholder {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    color: #121417;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid black;
+    height: 44px;
+    width: 158px;
+  }
 `;
 
 export const InputTo = styled(Field)`
@@ -126,6 +165,22 @@ export const InputTo = styled(Field)`
   width: 160px;
   height: 48px;
   background: #f7f7fb;
+  padding-left: 14px;
+
+  &::placeholder {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    color: #121417;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid black;
+    height: 44px;
+    width: 160px;
+  }
 `;
 
 export const SearchButton = styled.button`
