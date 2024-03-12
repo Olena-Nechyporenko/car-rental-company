@@ -19,3 +19,12 @@ export const List = styled.ul`
   gap: 20px;
   padding: 50px 0;
 `;
+
+export const Text = styled.p`
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.5;
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 50px 0;
+`;

@@ -19,6 +19,8 @@ export const Modal = styled.div`
   z-index: 20px;
   border-radius: 24px;
   width: 541px;
+  height: 90vh;
+  overflow-y: auto;
   background-color: var(--white-text-color);
 `;
 

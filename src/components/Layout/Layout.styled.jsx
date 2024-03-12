@@ -27,13 +27,13 @@ export const LogoLink = styled(NavLink)`
   filter: drop-shadow(1px 1px 1px #3470ff);
 `;
 
-export const Nav = styled.nav`
+export const NavList = styled.ul`
   display: flex;
   gap: 15px;
-  align-items: center;
 `;
 
 export const Link = styled(NavLink)`
+  display: block;
   font-family: inherit;
   font-weight: 500;
   font-size: 25px;
@@ -44,6 +44,17 @@ export const Link = styled(NavLink)`
 
   &:hover {
     color: #94b3ff;
+  }
+
+  &.active {
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent-color);
+      margin-top: 3px;
+    }
   }
 `;
 

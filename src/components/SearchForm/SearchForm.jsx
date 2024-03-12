@@ -8,6 +8,7 @@ import {
   DropDownBrand,
   DropDownPrice,
   SearchButton,
+  ResetButton,
   InputFrom,
   InputTo,
   InputWrapp,
@@ -37,7 +38,7 @@ const carMakes = [
   'Chevrolet',
   'Chrysler',
   'Kia',
-  'Land',
+  'Land Rover',
 ];
 
 let prices = [];
@@ -46,10 +47,10 @@ for (let i = 30; i <= 300; i += 10) {
 }
 
 export const SearchForm = () => {
-  const [brand, setBrand] = useState(null);
-  const [price, setPrice] = useState(null);
-  const [from, setFrom] = useState(null);
-  const [to, setTo] = useState(null);
+  const [brand, setBrand] = useState('');
+  const [price, setPrice] = useState('');
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
   const dispatch = useDispatch();
 
   const brandOptions = carMakes.map(make => {
@@ -63,6 +64,14 @@ export const SearchForm = () => {
     dispatch(setFilter({ brand, price, from, to }));
   };
 
+  const handleResetFilters = () => {
+    dispatch(setFilter({ brand: '', price: '', from: '', to: '' }));
+    setBrand('');
+    setPrice('');
+    setFrom('');
+    setTo('');
+  };
+
   return (
     <Formik
       initialValues={{ brands: brand, prices: price }}
@@ -74,6 +83,7 @@ export const SearchForm = () => {
             Car brand
             <DropDownBrand
               isSearchable
+              value={brand}
               onChange={setBrand}
               options={brandOptions}
               placeholder="Enter the text"
@@ -85,11 +95,11 @@ export const SearchForm = () => {
             Price/ 1 hour
             <DropDownPrice
               isSearchable
+              value={price}
               onChange={setPrice}
               options={priceOptions}
               placeholder="To $"
               styles={customPriceStyles}
-              required
             />
           </Label>
           <LabelWrapp>
@@ -98,18 +108,23 @@ export const SearchForm = () => {
               <InputFrom
                 type="number"
                 name="from"
+                value={from}
                 placeholder="From"
                 onChange={e => setFrom(e.target.value)}
               />
               <InputTo
                 type="number"
                 name="to"
+                value={to}
                 placeholder="To"
                 onChange={e => setTo(e.target.value)}
               />
             </InputWrapp>
           </LabelWrapp>
           <SearchButton type="submit">Search</SearchButton>
+          <ResetButton type="button" onClick={handleResetFilters}>
+            Reset
+          </ResetButton>
         </FormWrapper>
       </Form>
     </Formik>

@@ -36,16 +36,3 @@ export const fetchNextPage = createAsyncThunk(
     }
   }
 );
-
-export const fetchCarById = createAsyncThunk(
-  'cars/fetchCar',
-  async (id, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(`${BASE_URL}/${id}`);
-      console.log(response);
-      return response.data;
-    } catch (e) {
-      return rejectWithValue(e.message);
-    }
-  }
-);

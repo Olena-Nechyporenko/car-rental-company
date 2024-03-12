@@ -25,7 +25,7 @@ export default function CarsCatalogPage() {
     <Wrapper>
       <SearchForm />
       <CarsList />
-      {cars.length < 32 && cars.length >= 12 && (
+      {cars.length < 32 && cars.length >= 12 && cars.length !== 0 && (
         <div>
           <LoadMoreBtn type="button" onClick={handleLoadMore}>
             Load more

@@ -184,6 +184,27 @@ export const InputTo = styled(Field)`
 `;
 
 export const SearchButton = styled.button`
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--white-text-color);
+  border-radius: 12px;
+  border: none;
+  padding: 14px 44px;
+  width: 136px;
+  height: 48px;
+  background: var(--accent-color);
+  cursor: pointer;
+  transition: all var(--main-transition);
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+`;
+
+export const ResetButton = styled.button`
+  font-family: inherit;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;

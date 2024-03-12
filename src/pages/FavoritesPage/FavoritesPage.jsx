@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CarsItem } from 'components/CarsItem/CarsItem';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { ModalDetails } from 'components/ModalDetails/ModalDetails';
-import { Wrapper, Title, List } from './FavoritesPage.styled';
+import { Wrapper, Title, List, Text } from './FavoritesPage.styled';
 import { setId } from 'redux/cars/slice';
 import { selectFavorite } from 'redux/favorites/selectors';
 import {
@@ -57,11 +57,16 @@ export default function FavoritesPage() {
     <Wrapper>
       <Title>Favorite cars</Title>
       <SearchForm />
-      <List>
-        {filtered.map(car => (
-          <CarsItem key={car.id} carInfo={car} modalOpen={handleModalOpen} />
-        ))}
-      </List>
+      {filtered.length === 0 ? (
+        <Text>The list of your favorite cars is now empty.</Text>
+      ) : (
+        <List>
+          {filtered.map(car => (
+            <CarsItem key={car.id} carInfo={car} modalOpen={handleModalOpen} />
+          ))}
+        </List>
+      )}
+
       {modalOpen && (
         <ModalDetails onClose={handleModalClose} carInfo={oneCar} />
       )}
